@@ -3,6 +3,8 @@
 A FastAPI-based e-commerce backend that integrates **Google Gemini AI** for product description generation and **M-Pesa Daraja API** for payments. Built to simulate a real-world Kenyan e-commerce platform with AI-powered product content generation and M-Pesa payment processing.
 
 ---
+Google Drive [Link](https://drive.google.com/drive/folders/1Td0xtvbJvj3iBEb5xaX7UG93vi7Cgj8j?usp=sharing) with demo video.
+---
 
 ## Features
 
