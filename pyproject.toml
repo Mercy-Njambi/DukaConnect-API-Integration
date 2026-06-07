@@ -1,0 +1,13 @@
+[project]
+name = "dukaconnect-api-integration"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi>=0.136.3",
+    "google-genai>=2.8.0",
+    "python-dotenv>=1.2.2",
+    "requests>=2.34.2",
+    "uvicorn>=0.49.0",
+]
