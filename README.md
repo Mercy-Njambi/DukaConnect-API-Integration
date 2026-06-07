@@ -1,6 +1,6 @@
 # DukaConnect API Integration
 
-A FastAPI-based e-commerce backend that integrates **Google Gemini AI** for product description generation and **M-Pesa Daraja API** for payments — built with a Kenyan retail context in mind.
+A FastAPI-based e-commerce backend that integrates **Google Gemini AI** for product description generation and **M-Pesa Daraja API** for payments. Built to simulate a real-world Kenyan e-commerce platform with AI-powered product content generation and M-Pesa payment processing.
 
 ---
 
@@ -47,7 +47,8 @@ DUKACONNECT-API-INTEGRATION/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/dukaconnect-api-integration.git
+
+git clone https://github.com/Mercy-Njambi/DukaConnect-API-Integration.git
 cd dukaconnect-api-integration
 ```
 
@@ -231,7 +232,15 @@ safaricom_callback_url=https://abc123.ngrok.io/callback
 - The Gemini integration uses both the `google-genai` SDK (for thank-you messages) and direct HTTP calls (for description generation).
 
 ---
+## Future Improvements
+
+- PostgreSQL database integration
+- JWT authentication and authorization
+- Docker containerization
+- Deployment to Render or AWS
+- M-Pesa transaction persistence
+- Background task processing
 
 ## License
 
-MIT
+Apache License Version 2.0
