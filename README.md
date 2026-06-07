@@ -120,12 +120,23 @@ Interactive docs: `http://127.0.0.1:8000/docs`
 **Create product — request body:**
 ```json
 {
-  "name": "Kericho Gold Tea",
-  "price": 250.00,
-  "description": "Premium Kenyan black tea, 250g pack."
+  "name": "Pencil",
+  "price": 10.00,
+  "description": "A HB pencil that lasts for months."
 }
 ```
-
+**Create product — response body:**
+```json
+{
+  "message": "Product created successfully!",
+  "product": {
+    "id": 6,
+    "name": "Pencil",
+    "price": 10,
+    "description": "A HB pencil that lasts for months."
+  }
+}
+```
 ---
 
 ### Orders
@@ -144,7 +155,24 @@ Interactive docs: `http://127.0.0.1:8000/docs`
   ]
 }
 ```
-
+**Create order — response body:**
+```json
+{
+  "message": "Order created successfully!",
+  "order_id": 1,
+  "items": [
+    {
+      "product_id": 1,
+      "quantity": 2
+    },
+    {
+      "product_id": 3,
+      "quantity": 1
+    }
+  ],
+  "total_amount": 1480
+}
+```
 ---
 
 ### AI Description Generator
@@ -160,7 +188,13 @@ Interactive docs: `http://127.0.0.1:8000/docs`
   "keywords": ["handcrafted", "genuine leather", "Kenyan-made"]
 }
 ```
-
+**Response body:**
+```json
+{
+  "product_name": "Savannah Leather Wallet",
+  "generated_description": "The Savannah Leather Wallet: authentically Kenyan-made. Handcrafted from premium genuine leather, this durable and stylish accessory brings African artistry to your everyday. Feel the quality, carry the story."
+}
+```
 ---
 
 ### M-Pesa Payments
@@ -179,7 +213,40 @@ Interactive docs: `http://127.0.0.1:8000/docs`
   "order_id": 1
 }
 ```
+**Initiate payment — respone body:**
+```json
+{
+  "MerchantRequestID": "22fb-4ea6-8ef0-321f9f4be3da86865",
+  "CheckoutRequestID": "ws_CO_070620261818303277XXXXXXXX",
+  "ResponseCode": "0",
+  "ResponseDescription": "Success. Request accepted for processing",
+  "CustomerMessage": "Success. Request accepted for processing"
+}
 
+```
+**Payment status — request body:**
+```json
+{
+  "phone_number": "2547XXXXXXXX",
+  "order_id": 1
+}
+```
+**Payment status — response body:**
+```json
+{
+  "payment_status": "SUCCESS",
+  "mpesa_response": {
+    "ResponseCode": "0",
+    "ResponseDescription": "The service request has been accepted successfully",
+    "MerchantRequestID": "22fb-4ea6-8ef0-321f9f4be3da86865",
+    "CheckoutRequestID": "ws_CO_070620261818303277XXXXXXXX",
+    "ResultCode": "0",
+    "ResultDesc": "The service request is processed successfully."
+  },
+  "thank_you_message": "Thank you for your business! We have successfully processed your payment of KES 10.0 for order reference 1."
+}
+
+```
 ---
 
 ## M-Pesa Callback Setup (Local Development)
